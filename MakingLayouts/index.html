@@ -1,0 +1,62 @@
+<!-- floats 속성은 웹 개발자가 텍스트 열 내부에 float 하는 이미지를 포함하고,
+아울러 해당 이미지의 좌측 우측 주변으로 텍스트를 둘러싸는 간단한 레이아웃을 구현할 수 있도록 도입
+이런 것은 신문 레이아웃에서 볼 수 있는 종류 입니다 
+
+float 은 최전방
+
+
+display : flow-root
+블록 컨테이너 박스를 생성하여 요소 시작점의 위치를 변경시킬 수 있다.
+
+margin-right 과 right 와의 차이는
+속성명 그대로 margin 값을 준만큼 right 한다는 이야기
+-->
+
+<style>
+
+    body {
+        width: 90%;
+        max-width: 900px;
+        margin: 0 auto;
+        font: .9em/1.2 Arial, Helvetica, sans-serif
+    }
+
+    .box {
+        float: left;
+        margin-right: 15px;
+        width: 150px;
+        height: 100px;
+        border-radius: 5px;
+        background-color: rgb(207,232,200);
+        padding: 1em;
+    }
+    
+    .special{
+        background-color: rgb(79,185,227);
+        padding: 10px;
+        color: #fff;
+    }
+
+    .wrapper {
+        background-color: rgb(79,185,227);
+        padding: 10px;
+        color: #fff;
+        display: flow-root;
+    }
+
+    .cleared {
+        clear: left;
+    }
+
+</style>
+
+<div class="wrapper">
+<div class="box">float</div>
+
+<p class="special">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies tellus laoreet sit amet. </p>
+</div>
+<p class="cleared">Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci vel, viverra egestas ligula. Curabitur vehicula tellus neque, ac ornare ex malesuada et. In vitae convallis lacus. Aliquam erat volutpat. Suspendisse ac imperdiet turpis. Aenean finibus sollicitudin eros pharetra congue. Duis ornare egestas augue ut luctus. Proin blandit quam nec lacus varius commodo et a urna. Ut id ornare felis, eget fermentum sapien.</p>
+
+<p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus ut, facilisis sed est. Nam id risus quis ante semper consectetur eget aliquam lorem. Vivamus tristique elit dolor, sed pretium metus suscipit vel. Mauris ultricies lectus sed lobortis finibus. Vivamus eu urna eget velit cursus viverra quis vestibulum sem. Aliquam tincidunt eget purus in interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+
