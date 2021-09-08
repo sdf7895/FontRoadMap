@@ -1,0 +1,141 @@
+<!-- 
+    position : static -> 정적 위치잡기는 기본값
+    position : relative -> 부모 위치를 기준으로 top 30px right 30px 이동함(상대적위치)
+    position : absolute -> 절대적 위치 ( 항상 상단에서부터 시작 )
+    여백이 위치잡기한 요소에 여전히 영향을 미칩니다. 그러나 마진 축소 영향은 업습니다.
+    
+    절대적 위치잡기에서 어떤 요소에 비례해 위치 잡기할 기준이되는
+    positioning context(위치잡기 상황)을 변경할수있다
+    위치잡기 요소가 비 위치잡기 요소보다 우위를 점하기 때문입니다.
+    absolute 는 부모 position : relative 의 위치를 기준으로 시작할수있다.
+
+    z-index : 제일 위로 올린다!
+    z-인덱스는 단위가 없는 인덱스 값만 허용한다는 점에 유의하자
+
+    :nth-child
+    nth-child는 부모 요소의 n번째 자식 요소를 의미합니다. 이번 예제에서는 p:nth-child(2)라고 입력했으니 p 태그의 부모 요소를 기준으로 두 번째 자식 요소에 해당하는 <p>ipsum</p>를 지칭합니다.
+
+    :nth-of-tpye
+    nth-of-type은 부모 요소의 자식 요소 중 type 조건을 만족하는 n번째 자식 요소를 의미합니다
+
+    :nth-child 와 :nth-of-type 차이점
+
+    :nth-child 은 무조건 부모의 n번째 노드를 가르키고 (태그상관없이 무조건 순서)
+    :nth-of-type 은 타입조건을 만족하는 즉 p:nth-of-type(2) 는
+
+    부모 요소의 자식 요소중 p 태그를 가진 태그부터 2번째에있는 p태그를 찾아라
+    (타입 과 순서 둘다 조건에 맞는걸 찾아줌)
+
+    position: fixed -> 고정시켜준다
+
+    position: sticky -> 상대 위치잡기와 고정 위치잡기가 혼합된 하이브리드 형태
+    
+    그 위치(0)에 도달할 때 머리글을 브라우저 뷰포트 상단에 흡착시킵니다. 그 후 각각의 후속 머리글은 자신의 위치까지 스크롤하는 시점에 이전 머리글을 교체합니다.
+    
+
+    뷰포트란
+    Viewport 의 영역은 디바이스 크기와, 각각의 브라우저 마다 계산되는 영역이 달라 같은 웹페이지라도 환경에 따라, 매우 다양해진다.
+    Viewport 는 화면이 크기이기 때문에, viewport 보다 웹 문서가 클 경우 스크롤이 생성되며, 이를 가지고 viewport 를 이동시킬 수 있다.
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Basic document flow</title>
+
+    <style>
+      body {
+        width: 500px;
+        height: 1400px;
+        margin: 0 auto;
+
+      }
+      h1 {
+          position: fixed;
+          top: 0;
+          width: 500px;
+          margin: 0 auto;
+          background: white;
+          padding: 10px;
+        }
+
+      p {
+        background: aqua;
+        border: 3px solid blue;
+        padding: 10px;
+        margin: 10px;
+      }
+
+      span {
+        background: red;
+        border: 1px solid black;
+      }
+
+      .positioned {
+          background: yellow;
+          top: 30px;
+          left: 30px;
+      }
+
+      p:nth-of-type(1) {
+          margin-top: 60px;
+      }
+
+      dt {
+          background-color: black;
+          color: white;
+          padding: 10px;
+          position: sticky;
+          top: 0;
+          left: 0;
+          margin: 1em 0;
+        }
+
+    </style>
+  </head>
+  <body>
+    <!-- <h1>Basic document flow</h1>
+
+    <p>I am a basic block level element. My adjacent block level elements sit on new lines below me.</p>
+
+    <p class="positioned">By default we span 100% of the width of our parent element, and our height is as tall as our child content. Our total width and height is our content + padding + border width/height.</p>
+
+    <p>We are separated by our margins. Because of margin collapsing, we are separated by the width of one of our margins, not both.</p>
+
+    <p>inline elements <span>like this one</span> and <span>this one</span> sit on the same line as one another, and adjacent text nodes, if there is space on the same line. Overflowing inline elements <span>wrap onto a new line if possible — like this one containing text</span>, or just go on to a new line if not, much like this image will do></p> -->
+
+    
+    <h1>흡착 위치잡기</h1>
+
+<dl>
+    <dt>A</dt>
+    <dd>Apple</dd>
+    <dd>Ant</dd>
+    <dd>Altimeter</dd>
+    <dd>Airplane</dd>
+    <dt>B</dt>
+    <dd>Bird</dd>
+    <dd>Buzzard</dd>
+    <dd>Bee</dd>
+    <dd>Banana</dd>
+    <dd>Beanstalk</dd>
+    <dt>C</dt>
+    <dd>Calculator</dd>
+    <dd>Cane</dd>
+    <dd>Camera</dd>
+    <dd>Camel</dd>
+    <dt>D</dt>
+    <dd>Duck</dd>
+    <dd>Dime</dd>
+    <dd>Dipstick</dd>
+    <dd>Drone</dd>
+    <dt>E</dt>
+    <dd>Egg</dd>
+    <dd>Elephant</dd>
+    <dd>Egret</dd>
+</dl>
+        
+
+  </body>
+</html>
