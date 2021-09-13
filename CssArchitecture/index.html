@@ -1,0 +1,94 @@
+<!-- 
+
+    BEM 은 
+    Block,Element,Modifier 뜻한다
+    그리고 각각 -- , __ 으로 구분한다
+
+ -->
+
+ <style>
+     .header__navigation--navi-text {
+        color: red;
+    }
+ </style>
+
+ <!-- 
+
+    header => Block!
+    navigation => Element!
+    navi-text => Modifier!
+
+    BEM은 기본적으로 ID 를 사용하지 않으며 class 만을 사용
+    어떤 목적인가 에 따라 이름을 짓는다
+
+
+  -->
+
+  <!-- 
+
+    Block
+    
+    재사용 가능한 기능적으로 독립적인 페이지 컴포넌트!
+    헤더에 쓰일 수도 있고, 푸터에 쓰일 수도 있고!
+
+    블럭은 블럭을 감쌀 수 있다.
+
+    .header>.logo 처럼!
+
+    header 블럭안에 logo 라는 블럭이 들어간 형태!
+
+   -->
+
+
+   <!-- 
+
+     Element
+
+     블럭을 구성하는 단위
+
+     엘리먼트는 의존적인형태
+
+     자신이 속한 블럭 내에서만 의미를 가지기 때문!
+
+        <form class="search-form">
+            <input class="search-form__input"/>
+            <button class="search-form__button">Search</button>
+        </form>
+        
+        search-form 은 블럭
+        search-form__input , search-form__button 은 엘리먼트
+    
+        잘못된 예
+        <form class="search-form">
+            <div class="search-form__content">
+            <input class="search-form__content__input"/>
+            <button class="search-form__content__button">Search</button>
+            </div>
+        </form>
+
+        
+        좋은 예
+
+        <form class="search-form">
+            <div class="search-form__content">
+            <input class="search-form__input"/>
+            <button class="search-form__button">Search</button>
+             </div>
+        </form>
+        블록안에서 block-element-modify 여야되는데
+        잘못된 예에서는 따르고있지않는다
+
+        좋은예 에서는 블록의 search-form 은 그대로따르고
+        input , button  으로 정확히 자기자신이 뭘하는지 보여주고있다.
+    -->
+
+    <!-- 
+
+        Modifier
+        블럭이나 엘리먼트 속성을 담당!
+        생긴게 조금 다르거나, 다르게 동작하는 블럭이나 엘리먼트를 만들때 사용
+        
+     -->
+
+     <!-- 출처 : https://nykim.work/15 -->
+
