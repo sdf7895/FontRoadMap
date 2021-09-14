@@ -1,0 +1,39 @@
+<!-- 
+
+    {
+  "name": "algo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hello": "echo helloWorld",
+    "cowsay": "./node_modules/cowsay/cli.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cowsay": "^1.5.0"
+  }
+}
+
+  script 안에 특정 라이브러리의 시작을 지정할수있는데
+  key : value 형식이고
+
+  key 는 실행명령어
+  value 는 실행라이브러리의 경로
+
+  ./ => 이 프로젝트의 절대경로
+
+
+  global 장단점
+  한번만 설치하면 다른 프로젝트에서도 쓸수있으나 충돌가능성이큼
+  왜냐하면 전역설치이기때문에 전역적으로 영향을끼침
+
+  local 장단점
+  장점은 로컬에서만설치하기때문에 프로젝트별로 라이브러리 관리가 더 체계적이고 쉽다
+  단점은 항상 사용할때 npm 을 붙여줘야된다
+
+
+
+ -->
